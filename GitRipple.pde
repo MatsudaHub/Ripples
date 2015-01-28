@@ -6,6 +6,11 @@ int new_ripple = 0;
 
 void setup(){
   size(400,400);
+  
+  stroke(255);
+  strokeWeight(5);
+  noFill();
+  
   for(int i=0; i<scale.length; i++){
     scale[i] = -1;
   }
@@ -33,8 +38,5 @@ void generateRipple(int mouseX, int mouseY){
 }
 
 void drawRipple(int px, int py, int sc){
-  fill(255);
   ellipse(px, py, sc, sc);
-  fill(0);
-  ellipse(px, py, sc-5, sc-5);
 }
