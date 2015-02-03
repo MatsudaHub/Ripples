@@ -1,42 +1,25 @@
 
-int[] posX = new int[10];
-int[] posY = new int[10];
-int[] scale = new int[10];
-int new_ripple = 0;
+ArrayList<Ripple> ripples;
 
-void setup(){
-  size(400,400);
-  
+void setup() {
+  size(400, 400);
+
   stroke(255);
   strokeWeight(5);
   noFill();
-  
-  for(int i=0; i<scale.length; i++){
-    scale[i] = -1;
-  }
+
+  ripples = new ArrayList<Ripple>();
 }
 
-void draw(){
+void draw() {
   background(10);
-  
-  for(int i=0; i<scale.length; i++)
-  if(scale[i]!=-1){
-    drawRipple(posX[i],posY[i],scale[i]);
-    scale[i]++;
+
+  for (Ripple a : ripples) {
+    a.display();
   }
 }
 
-void mousePressed(){
-  generateRipple(mouseX,mouseY);
+void mousePressed() {
+  ripples.add( new Ripple(mouseX, mouseY, 10));
 }
 
-void generateRipple(int mouseX, int mouseY){
-  posX[new_ripple] = mouseX;
-  posY[new_ripple] = mouseY;
-  scale[new_ripple] = 10;
-  new_ripple++;
-}
-
-void drawRipple(int px, int py, int sc){
-  ellipse(px, py, sc, sc);
-}
