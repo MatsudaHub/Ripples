@@ -1,4 +1,10 @@
 # processing-ripples
+
+## Description
 This is ripples  
-## Environment
-Processing ver2.2.1  
+
+## Requirement
+* Processing ver2.2.1
+
+## License
+MIT License  
