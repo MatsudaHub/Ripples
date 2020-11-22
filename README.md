@@ -1,6 +1,4 @@
-# Ripples
-This is ripples.
-
-
-## Programming language 
-Processing 2.2.1
+# processing-ripples
+This is ripples  
+## Environment
+- Processing ver2.2.1
